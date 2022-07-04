@@ -1,5 +1,4 @@
 # cbr_compressor
-A Python script that compress CBR (Comic book Rar) Files.
 
 A Python script that compress CBR (Comic book Rar) Files. Usage:
 
