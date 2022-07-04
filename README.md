@@ -11,4 +11,8 @@ where:
 
 Dependencies:
 
-Please instal the following libraries: pip install rar pip install patool pip install pillow
+Please instal the following libraries: 
+
+* pip install rar 
+* pip install patool
+*  pip install pillow
