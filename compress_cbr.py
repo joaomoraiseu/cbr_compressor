@@ -12,10 +12,9 @@ def compress_cbr(input_path,output_path,compression_level):
 			patoolib.extract_archive(input_path, outdir= tmpdirname)
 			with tempfile.TemporaryDirectory() as compressedTmpDirName:
 				compressedFilenames = []
-				for filename in os.listdir(tmpdirname):
-					print(filename)
+				for filename in os.listdir(tmpdirname + "/" + cbrName):
 					if ".jpg" in filename or ".png" in filename:
-						img = PIL.Image.open(tmpdirname + "/" + filename)
+						img = PIL.Image.open(tmpdirname + "/" + cbrName + "/" + filename)
 						myHeight, myWidth = img.size
 						threshold = int(compression_level)
 						newHeight = (myHeight * threshold) / 100
@@ -29,7 +28,7 @@ def compress_cbr(input_path,output_path,compression_level):
 				os.rename(output_file + ".zip",output_file + ".cbr")
 				os.remove(input_path)
 	except Exception as e:
-		with open(input_path + '/errors.txt', 'a') as f:
+		with open("erros.txt", 'a') as f:
 			f.write(cbrName + "\n")
 
 parser = argparse.ArgumentParser(description="",formatter_class=argparse.RawTextHelpFormatter,)
